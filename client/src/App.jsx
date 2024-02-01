@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Note from './components/Note'
 import Notification from './components/Notification'
 import Footer from './components/Footer'
+import noteService from './services/notes'
 
 const App = () => {
   const [notes, setNotes] = useState([])
@@ -14,8 +15,9 @@ const App = () => {
   const addNote = (event) => {
     event.preventDefault()
     const noteObject = {
+      id: notes.length + 1,
       content: newNote,
-      important: Math.random() > 0.5,
+      important: false,
     }
   
     setNotes(notes.concat(noteObject))
@@ -41,15 +43,17 @@ const App = () => {
           setErrorMessage(null)
         }, 5000)
       })
+
+      console.log("notes2", notes)
+
   }
+
+  console.log("notes", notes)
 
   const notesToShow = showAll
     ? notes
     : notes.filter(note => note.important)
 
-
-
-  console.log('Hello from component')
   return (
     <>
       <h1>Notes</h1>
