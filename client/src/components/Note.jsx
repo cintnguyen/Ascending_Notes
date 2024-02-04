@@ -4,19 +4,22 @@ const Note = ({ note, key, toggleImportance, deleteNote }) => {
   const deleteIcon = "icons8-delete-30.png"
 
   return (
-    <>
+    <li className='Note'>
       <div key={key}>
         {note.content}
-        <button
+        <button 
+          id="important"
           onClick={toggleImportance}
           aria-label={importantLabel}
           aria-pressed={note.important}> 
           <img
             src={`../images/${starIcon}`}
             alt="star icon."
+            
           /> 
+          make important
           </button>
-          <button
+          <button className ="delete"
           onClick={deleteNote}
           aria-label=""
           > 
@@ -24,9 +27,10 @@ const Note = ({ note, key, toggleImportance, deleteNote }) => {
             src={`../images/${deleteIcon}`}
             alt="star icon."
           /> 
+          delete
           </button>
       </div>
-    </>
+      </li>
   );
 };
 
