@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 import Note from './components/Note.jsx'
 import userEvent from '@testing-library/user-event'
+
 
 test('renders content', () => {
   const note = {
@@ -53,3 +54,33 @@ test('clicking the button that pins notes and makes it important', async () => {
   
     expect(mockHandler.mock.calls).toHaveLength(0)
   })
+
+  const FetchDataComponent = ({ fetchData }) => {
+    const [data, setData] = useState(null);
+    const [error, setError] = useState(null);
+  
+    useEffect(() => {
+      const fetchDataFromApi = async () => {
+        try {
+          const result = await fetchData();
+          setData(result);
+        } catch (error) {
+          setError(error);
+        }
+      };
+  
+      fetchDataFromApi();
+    }, [fetchData]);
+  
+    return (
+      <div>
+        {error ? (
+          <div data-testid="error-message">Error: {error.message}</div>
+        ) : (
+          <div data-testid="data">{data}</div>
+        )}
+      </div>
+    );
+  };
+  
+  export default FetchDataComponent;
