@@ -1,10 +1,10 @@
 
 
 import { useState, useEffect } from 'react';
-import Note from './components/Note'
-import Notification from './components/Notification'
-import Footer from './components/Footer'
-import noteService from './services/notes'
+import Note from './components/note/Note'
+import Notification from './components/notification/Notification'
+import Footer from './components/footer/Footer'
+import noteService from './components/note/notes'
 
 //create variable for backend url
 const baseUrl = 'http://localhost:3001/api'
