@@ -166,7 +166,7 @@ const App = () => {
           show {showAll ? 'important' : 'all'}
         </button>
       </div>
-      <ul>
+      <ul id="notes">
         {notesToShow.map(note =>
           <Note
             key={note.id}
