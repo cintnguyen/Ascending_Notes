@@ -15,7 +15,7 @@ Before running any tests, ensure you have the following dependencies installed:
 - npm (Node Package Manager)
 
 
-We utilize Jest to test our app and we have version 29.7.0.
+
 
 Dependencies:
 
