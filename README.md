@@ -69,13 +69,40 @@ VSCode Extension: download "Jest Run It" VSCode extension and then click on the 
 
 <img width="683" alt="Screenshot 2024-02-05 at 8 03 17 PM" src="https://github.com/manderscode/Ascending_Notes/assets/102008028/65c49c8f-d81a-40cf-97c3-aa3401aed3cc">
 
+Components Testing: 
 
+Test Case 1: Adding a New Note - Tests the ability to add a new note to the app.
 
+Test Steps:
+Render the app.
+Simulate user input to add a new note.
+Verify that the new note is displayed in the notes list.
+Expected Outcome: The new note should be successfully added to the app.
+Read Operation
 
+Test Case 2: Displaying Existing Notes - Tests the ability to display existing notes in the app.
 
+Test Steps:
+Render the app with existing notes.
+Verify that all existing notes are displayed in the notes list.
+Expected Outcome: All existing notes should be correctly displayed.
+Update Operation
 
+Test Case 3: Editing an Existing Note - Tests the ability to edit an existing note.
 
+Test Steps:
+Render the app with existing notes.
+Simulate user input to edit a specific note.
+Verify that the edited note is updated in the notes list.
+Expected Outcome: The edited note should be successfully updated.
+Delete Operation
 
+Test Case 4: Removing a Note - Tests the ability to remove a note from the app.
+Test Steps:
+Render the app with existing notes.
+Simulate user action to delete a specific note.
+Verify that the deleted note is removed from the notes list.
+Expected Outcome: The deleted note should be successfully removed from the app.
 
 
 
