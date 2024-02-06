@@ -4,7 +4,6 @@ import { render, waitFor, screen } from '@testing-library/react'
 import Note from './Note.jsx'
 import userEvent from '@testing-library/user-event'
 
-
 test('renders content', () => {
   const note = {
     content: 'Component testing is done with react-testing-library',
