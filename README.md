@@ -71,7 +71,7 @@ VSCode Extension: download "Jest Run It" VSCode extension and then click on the 
 
 Components Testing: 
 
-Test Case 1: Adding a New Note - Tests the ability to add a new note to the app.
+Test 1: Adding a New Note - Tests the ability to add a new note to the app.
 
 Test Steps:
 Render the app.
@@ -80,7 +80,7 @@ Verify that the new note is displayed in the notes list.
 Expected Outcome: The new note should be successfully added to the app.
 Read Operation
 
-Test Case 2: Displaying Existing Notes - Tests the ability to display existing notes in the app.
+Test 2: Displaying Existing Notes - Tests the ability to display existing notes in the app.
 
 Test Steps:
 Render the app with existing notes.
@@ -88,7 +88,7 @@ Verify that all existing notes are displayed in the notes list.
 Expected Outcome: All existing notes should be correctly displayed.
 Update Operation
 
-Test Case 3: Editing an Existing Note - Tests the ability to edit an existing note.
+Test 3: Editing an Existing Note - Tests the ability to edit an existing note.
 
 Test Steps:
 Render the app with existing notes.
@@ -97,7 +97,7 @@ Verify that the edited note is updated in the notes list.
 Expected Outcome: The edited note should be successfully updated.
 Delete Operation
 
-Test Case 4: Removing a Note - Tests the ability to remove a note from the app.
+Test 4: Removing a Note - Tests the ability to remove a note from the app.
 Test Steps:
 Render the app with existing notes.
 Simulate user action to delete a specific note.
