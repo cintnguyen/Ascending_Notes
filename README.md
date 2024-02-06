@@ -40,7 +40,7 @@ Dependencies we have in our package.json file:
         "vite": "^5.0.8"
       }
 
-More information regarding how to configure [Jest] (https://jestjs.io/docs/configuration)and [React Testing Library (https://testing-library.com/docs/react-testing-library/setup/)] can be found on the official documentation website. 
+More information regarding how to configure Jest (https://jestjs.io/docs/configuration) and React Testing Library (https://testing-library.com/docs/react-testing-library/setup/) can be found on the official documentation website. 
 
 Test Files for Jest: 
 The jest.setup.js file allows you to set up any global configurations, custom matchers, or setup code that you want to run before each test suite in your Jest environment. It acts as a setup file for Jest, hence the name.
