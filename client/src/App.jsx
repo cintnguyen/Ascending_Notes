@@ -1,5 +1,3 @@
-
-
 import { useState, useEffect } from 'react';
 import Note from './components/note/Note'
 import Notification from './components/notification/Notification'
@@ -8,6 +6,9 @@ import noteService from './components/note/notes'
 import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
 import ListGroup from 'react-bootstrap/ListGroup';
+import Form from 'react-bootstrap/Form'
+import Container from 'react-bootstrap/Container'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 //create variable for backend url
 const baseUrl = 'http://localhost:3001/api'
@@ -161,35 +162,40 @@ const App = () => {
 
 
   return (
-    <>
+    <Container>
       <h1>Notes</h1>
       <Notification message={errorMessage} />
       <div>
-        <button onClick={() => setShowAll(!showAll)}>
+        <Button variant="outline-secondary" size="sm" onClick={() => setShowAll(!showAll)}>
           show {showAll ? 'important' : 'all'}
-        </button>
+        </Button>
       </div>
       <ul>
-        {notesToShow.map(note =>
-          <Note
-            key={note.id}
-            note={note}
-            toggleImportance={() => toggleImportanceOf(note._id)}
-            deleteNote={() => deleteNote(note._id)}
-          />
-        )}
+        <ListGroup as="ul">
+          {notesToShow.map(note =>
+            <Note
+              key={note.id}
+              note={note}
+              toggleImportance={() => toggleImportanceOf(note._id)}
+              deleteNote={() => deleteNote(note._id)}
+            />
+          )}
+        </ListGroup>
       </ul>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={formData.content}
+      <Form onSubmit={handleSubmit}>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>New Note</Form.Label>
+        <Form.Control 
+          type="text" 
+          placeholder="Enter note..." 
+          value={formData.content} 
           name="content"
-          onChange={handleNoteChange}
-        />
-        <button type="submit">save</button>
-      </form>
+          onChange={handleNoteChange}/>
+        </Form.Group>
+        <Button variant="primary" type="submit">save</Button>
+      </Form>
       <Footer />
-    </>
+    </Container>
   )
 }
 
