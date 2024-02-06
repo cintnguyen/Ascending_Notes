@@ -10,7 +10,12 @@ Unit tests are essential and play a crucial role in the overall testing strategy
 
 # Test Environment Set Up
 
-We utilize Jest to test our app and we hae version 29.7.0.
+Before running any tests, ensure you have the following dependencies installed: 
+- Node.js (version 12 or higher)
+- npm (Node Package Manager)
+
+
+We utilize Jest to test our app and we have version 29.7.0.
 
 Dependencies:
 
@@ -37,14 +42,23 @@ Dependencies:
 
 More information regarding how to configure Jest (https://jestjs.io/docs/configuration) and React Testing Library (https://testing-library.com/docs/react-testing-library/setup/) can be found on the official documentation website. 
 
+Test Files for Jest: 
+The jest.setup.js file allows you to set up any global configurations, custom matchers, or setup code that you want to run before each test suite in your Jest environment. It acts as a setup file for Jest, hence the name.
+The jest.config.js file is used to configure Jest's behavior and options for your project. It allows you to specify various settings such as test environment, test match patterns, setup files, coverage configurations, and more.
+
 #Test File Structure
 
 Our files are organized according to components. Each component has its own file and the respective test in the same folder.
+client > src > components > note
+
+<img width="299" alt="Screenshot 2024-02-05 at 8 57 02 PM" src="https://github.com/StacyLafume/Ascending_Notes/assets/102008028/45b37871-b31d-4475-946b-1403629e0699">
+
+
 
 # Testing
 
 Option 1: 
-1. Open the test you want to run
+1. Open the test you want to run in their respective folder
 2. Open your terminal or another option is to open the terminal in VSCode using Ctrl + `
 3.Command: npm run test 
 
