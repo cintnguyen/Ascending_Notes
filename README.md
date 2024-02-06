@@ -1,4 +1,4 @@
-## Ascending Notes Documentation
+# Ascending Notes Documentation
 
 # Introduction
 
