@@ -104,9 +104,58 @@ Simulate user action to delete a specific note.
 Verify that the deleted note is removed from the notes list.
 Expected Outcome: The deleted note should be successfully removed from the app.
 
+Backend Testing: 
 
+Test 1: GET /api/notes
+Description: This test verifies that the endpoint responds with JSON data retrieved from the database.
+Expected Behavior: A successful response with status code 200 and content type "application/json".
 
+Test Steps: Send a GET request to "/api/notes".
+Expect a status code of 200.
+Expect the response content type to be "application/json".
+Additional Information: The test logs the length of the response body.
 
+Test 2: POST /api/createNote
+Description: This test verifies that the endpoint successfully creates a new note in the database.
+Expected Behavior: A successful response with status code 201 and content type "application/json".
+
+Test Steps: Send a POST request to "/api/createNote" with a sample note object.
+- Expect a status code of 201.
+- Expect the response content type to be "application/json".
+
+Error Handling: If an incomplete note is posted, the endpoint should respond with status code 400 and an error message indicating the missing field.
+
+Test 3: PUT /api/notes/:id
+Description: This test verifies that the endpoint updates an existing note in the database.
+Expected Behavior: A successful response with status code 200 and content type "application/json".
+Test Steps:
+- Create a new note by sending a POST request to "/api/createNote".
+- Send a PUT request to "/api/notes/:id" to update the created note.
+- Expect a status code of 200.
+- Expect the response content type to be "application/json".
+  
+Error Handling: If the provided note ID does not exist, the endpoint should respond with status code 404 and an error message indicating the unknown endpoint.
+Additional Information: The test compares the updated note's ID and important status with the original note's ID and opposite important status.
+
+Test 4: DELETE /api/notes/:id
+Description: This test verifies that the endpoint deletes a note from the database.
+Expected Behavior: A successful response with status code 200.
+
+Test Steps:
+- Create a new note by sending a POST request to "/api/createNote".
+- Send a DELETE request to "/api/notes/:id" to delete the created note.
+- Expect a status code of 200.
+- 
+Error Handling: If the provided note ID does not exist, the endpoint should still respond with status code 404.
+Additional Information: None.
+
+Test 5: afterAll Hook
+Description: This hook executes after all tests and is responsible for cleaning up the test data and closing the Mongoose connection.
+Expected Behavior: All test data should be cleared from the database, and the Mongoose connection should be closed without errors.
+
+Test Steps:
+- Send a DELETE request to "/api/cleartests".
+- Close the Mongoose connection.
 
 
 
